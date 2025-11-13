@@ -5,6 +5,7 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/ActiveAgingHK_App_Prototype/',
   build: {
     sourcemap: 'hidden',
   },
