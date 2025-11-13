@@ -1,0 +1,102 @@
+/* 高对比度模式样式 */
+.high-contrast {
+  filter: contrast(1.5) !important;
+}
+
+.high-contrast * {
+  color: #000 !important;
+  background-color: #fff !important;
+  border-color: #000 !important;
+}
+
+.high-contrast button {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+.high-contrast .bg-red-500,
+.high-contrast .bg-red-600 {
+  background-color: #ff0000 !important;
+  color: #fff !important;
+}
+
+.high-contrast .bg-green-500,
+.high-contrast .bg-green-600 {
+  background-color: #00ff00 !important;
+  color: #000 !important;
+}
+
+.high-contrast .bg-blue-500,
+.high-contrast .bg-blue-600 {
+  background-color: #0000ff !important;
+  color: #fff !important;
+}
+
+.high-contrast .bg-purple-500,
+.high-contrast .bg-purple-600 {
+  background-color: #ff00ff !important;
+  color: #fff !important;
+}
+
+/* 大字体模式 */
+.text-large {
+  font-size: 1.25rem !important;
+}
+
+.text-extra-large {
+  font-size: 1.5rem !important;
+}
+
+/* 按钮最小尺寸 */
+button {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* 语音播放时的视觉反馈 */
+.speaking {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 紧急状态动画 */
+.emergency-active {
+  animation: emergency-flash 0.5s infinite;
+}
+
+@keyframes emergency-flash {
+  0%, 100% {
+    background-color: #ef4444;
+  }
+  50% {
+    background-color: #dc2626;
+  }
+}
+
+/* 无障碍焦点样式 */
+*:focus {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+/* 触摸目标尺寸 */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px;
+}
+
+/* 语音控制反馈 */
+.listening {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3) !important;
+}
