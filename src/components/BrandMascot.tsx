@@ -33,7 +33,7 @@ export const BrandMascot: React.FC<BrandMascotProps> = ({
   const CatMascot = () => (
     <div className={`${sizeClasses[size]} ${animationClasses} ${className}`}>
       <img 
-        src="/UI.png" 
+        src={`${import.meta.env.BASE_URL}UI.png`}
         alt="猫咪吉祥物" 
         className={`w-full h-full object-contain ${moodColors[mood]}`}
       />
@@ -44,7 +44,7 @@ export const BrandMascot: React.FC<BrandMascotProps> = ({
   const CombinedMascot = () => (
     <div className={`relative ${sizeClasses[size]} ${className}`}>
       <img 
-        src="/UI.png" 
+        src={`${import.meta.env.BASE_URL}UI.png`}
         alt="品牌吉祥物" 
         className={`w-full h-full object-contain ${moodColors[mood]}`}
       />
