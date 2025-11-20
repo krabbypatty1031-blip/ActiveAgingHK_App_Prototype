@@ -250,7 +250,7 @@ const ElegantAIAssistant: React.FC = () => {
     const last = messages[messages.length - 1];
     if (!last) return '--:--';
     try {
-      return last.timestamp.toLocaleTimeString('zh-HK', { hour: '2-digit', minute: '2-digit' });
+      return last.timestamp.toLocaleTimeString('en-HK', { hour: '2-digit', minute: '2-digit' });
     } catch {
       return '--:--';
     }
@@ -384,7 +384,7 @@ const ElegantAIAssistant: React.FC = () => {
                             message.type === 'user' ? 'text-blue-100' : 'text-gray-500 dark:text-gray-400'
                           }`}
                         >
-                          {message.timestamp.toLocaleTimeString('zh-HK', { hour: '2-digit', minute: '2-digit' })}
+                          {message.timestamp.toLocaleTimeString('en-HK', { hour: '2-digit', minute: '2-digit' })}
                         </p>
                       </div>
                     </div>
