@@ -12,12 +12,12 @@ const ElegantSettings: React.FC<ElegantSettingsProps> = ({ onBack }) => {
   const { setFontSize, setHighContrast, setVoiceNavigation, speak } = useAccessibility();
   const [settings, setSettings] = useState({
     voiceEnabled: true,
-    largeText: false,
+    largeText: true,
     highContrast: false,
     soundEffects: true,
     notifications: true,
     autoEmergency: true,
-    fontSize: 'normal',
+    fontSize: 'large',
     theme: 'auto',
     alertVolume: 70
   });
