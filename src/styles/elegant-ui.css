@@ -1,76 +1,85 @@
-/* 精致UI设计系统 - 柔和配色与现代微交互 */
+/* Refined UI design system - gentle palette and modern micro-interactions */
 
-/* 柔和配色方案 */
+/* Soft color palette */
 :root {
-  /* 主色 - 宁静蓝 - 优化对比度 */
-  --primary-blue: #3B82F6;
-  --primary-blue-light: #60A5FA;
-  --primary-blue-dark: #2563EB;
-  --primary-blue-soft: #DBEAFE;
+  /* iOS design language colors and typography definitions */
+  --primary-blue: #0A84FF;
+  --primary-blue-light: #5AC8FA;
+  --primary-blue-dark: #0060DF;
+  --primary-blue-soft: rgba(10, 132, 255, 0.12);
   
-  /* 辅助色 - 大地暖橙 - 优化饱和度 */
-  --secondary-orange: #F97316;
-  --secondary-orange-light: #FB923C;
-  --secondary-orange-dark: #EA580C;
-  --secondary-orange-soft: #FED7AA;
+  --secondary-orange: #FF9F0A;
+  --secondary-orange-light: #FFD60A;
+  --secondary-orange-dark: #C67C00;
+  --secondary-orange-soft: rgba(255, 159, 10, 0.16);
   
-  /* 状态色 - 柔和版本 - 增强可识别性 */
-  --status-success: #10B981;
-  --status-success-soft: #D1FAE5;
-  --status-warning: #F59E0B;
-  --status-warning-soft: #FEF3C7;
-  --status-error: #EF4444;
-  --status-error-soft: #FEE2E2;
-  --status-info: #3B82F6;
-  --status-info-soft: #DBEAFE;
+  --status-success: #32D74B;
+  --status-success-soft: rgba(50, 215, 75, 0.18);
+  --status-warning: #FFD60A;
+  --status-warning-soft: rgba(255, 214, 10, 0.18);
+  --status-error: #FF453A;
+  --status-error-soft: rgba(255, 69, 58, 0.16);
+  --status-info: #5AC8FA;
+  --status-info-soft: rgba(90, 200, 250, 0.16);
+  --ios-secondary: #5856D6;
+  --ios-success: #32D74B;
+  --ios-warning: #FFD60A;
+  --ios-danger: #FF453A;
+  --ios-label: #1C1C1E;
+  --ios-label-dark: #F2F2F7;
+  --ios-border: rgba(0, 0, 0, 0.08);
+  --ios-border-dark: rgba(255, 255, 255, 0.16);
+  --ios-surface: rgba(255, 255, 255, 0.7);
+  --ios-surface-strong: rgba(255, 255, 255, 0.9);
+  --ios-surface-dark: rgba(44, 44, 46, 0.7);
   
-  /* 中性色 - 温暖灰调 */
-  --neutral-50: #F9FAFB;
-  --neutral-100: #F3F4F6;
-  --neutral-200: #E5E7EB;
-  --neutral-300: #D1D5DB;
-  --neutral-400: #9CA3AF;
-  --neutral-500: #6B7280;
-  --neutral-600: #4B5563;
-  --neutral-700: #374151;
-  --neutral-800: #1F2937;
-  --neutral-900: #111827;
+  /* Neutral palette - iOS grayscale */
+  --neutral-50: #F5F5F7;
+  --neutral-100: #ECECF0;
+  --neutral-200: #E2E3E8;
+  --neutral-300: #C7C8CE;
+  --neutral-400: #AEAEB2;
+  --neutral-500: #8E8E93;
+  --neutral-600: #636366;
+  --neutral-700: #3A3A3C;
+  --neutral-800: #1C1C1E;
+  --neutral-900: #0C0C0D;
   
-  /* 渐变背景 */
-  --gradient-soft: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-  --gradient-warm: linear-gradient(135deg, #FFF8F0 0%, #FFE8D6 100%);
-  --gradient-calm: linear-gradient(135deg, #F0F8FF 0%, #E6F3FF 100%);
+  /* Gradient backgrounds - reinforce iOS glassmorphism */
+  --gradient-soft: linear-gradient(135deg, rgba(245, 245, 247, 0.95) 0%, rgba(229, 229, 234, 0.85) 100%);
+  --gradient-warm: linear-gradient(135deg, rgba(255, 244, 232, 0.92) 0%, rgba(252, 234, 209, 0.82) 100%);
+  --gradient-calm: linear-gradient(135deg, rgba(235, 244, 255, 0.88) 0%, rgba(217, 237, 255, 0.78) 100%);
   
-  /* 阴影系统 - 柔和层次 */
-  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-large: 0 16px 48px rgba(0, 0, 0, 0.12);
-  --shadow-inner-soft: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  /* Shadow system - soft layering */
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-medium: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --shadow-large: 0 32px 60px rgba(15, 23, 42, 0.18);
+  --shadow-inner-soft: inset 0 1px 0 rgba(255, 255, 255, 0.35);
   
-  /* 圆角系统 */
+  /* Corner radius system */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 20px;
   --radius-xl: 24px;
   --radius-full: 9999px;
   
-  /* 字体系统 - 优化层次 */
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans CJK TC', sans-serif;
-  --font-family-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography system - hierarchy focused */
+  --font-family-base: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, 'Noto Sans CJK TC', sans-serif;
+  --font-family-display: 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   
-  /* 精细字体层次 */
-  --font-size-xs: 0.75rem;     /* 12px - 标签、小按钮 */
-  --font-size-sm: 0.875rem;    /* 14px - 正文小字 */
-  --font-size-base: 1rem;      /* 16px - 标准正文 */
-  --font-size-md: 1.125rem;    /* 18px - 稍大正文 */
-  --font-size-lg: 1.25rem;     /* 20px - 小标题 */
-  --font-size-xl: 1.375rem;    /* 22px - 中等标题 */
-  --font-size-2xl: 1.625rem;   /* 26px - 大标题 */
-  --font-size-3xl: 2rem;       /* 32px - 页面标题 */
-  --font-size-4xl: 2.5rem;     /* 40px - 大标题 */
-  --font-size-5xl: 3rem;       /* 48px - 超大标题 */
+  /* Detailed typography scale */
+  --font-size-xs: 0.75rem;     /* 12px - labels, small buttons */
+  --font-size-sm: 0.875rem;    /* 14px - compact body text */
+  --font-size-base: 1rem;      /* 16px - standard body */
+  --font-size-md: 1.125rem;    /* 18px - larger body */
+  --font-size-lg: 1.25rem;     /* 20px - small heading */
+  --font-size-xl: 1.375rem;    /* 22px - medium heading */
+  --font-size-2xl: 1.625rem;   /* 26px - large heading */
+  --font-size-3xl: 2rem;       /* 32px - page title */
+  --font-size-4xl: 2.5rem;     /* 40px - prominent title */
+  --font-size-5xl: 3rem;       /* 48px - hero title */
   
-  /* 字重 - 更精细层次 */
+  /* Font weights - refined steps */
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -78,47 +87,70 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   
-  /* 行高 - 优化可读性 */
+  /* Line heights - optimized readability */
   --line-height-tight: 1.2;
   --line-height-snug: 1.35;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.65;
   --line-height-loose: 1.8;
   
-  /* 间距系统 - 优化层次 */
+  /* Spacing system - refined gradation */
   --space-0: 0;         /* 0px */
-  --space-1: 0.25rem;   /* 4px - 极小间距 */
-  --space-2: 0.5rem;    /* 8px - 小组件间距 */
-  --space-3: 0.75rem;   /* 12px - 标准内间距 */
-  --space-4: 1rem;      /* 16px - 基础间距 */
-  --space-5: 1.25rem;   /* 20px - 稍大间距 */
-  --space-6: 1.5rem;    /* 24px - 中等间距 */
-  --space-7: 1.75rem;   /* 28px - 中大间距 */
-  --space-8: 2rem;      /* 32px - 大间距 */
-  --space-9: 2.25rem;   /* 36px - 较大间距 */
-  --space-10: 2.5rem;   /* 40px - 很大间距 */
-  --space-11: 2.75rem;  /* 44px - 超大间距 */
-  --space-12: 3rem;     /* 48px - 最大间距 */
+  --space-1: 0.25rem;   /* 4px - micro spacing */
+  --space-2: 0.5rem;    /* 8px - compact component gap */
+  --space-3: 0.75rem;   /* 12px - standard inset */
+  --space-4: 1rem;      /* 16px - base spacing */
+  --space-5: 1.25rem;   /* 20px - medium spacing */
+  --space-6: 1.5rem;    /* 24px - generous spacing */
+  --space-7: 1.75rem;   /* 28px - medium-large spacing */
+  --space-8: 2rem;      /* 32px - large spacing */
+  --space-9: 2.25rem;   /* 36px - extra spacing */
+  --space-10: 2.5rem;   /* 40px - wide spacing */
+  --space-11: 2.75rem;  /* 44px - extra wide spacing */
+  --space-12: 3rem;     /* 48px - maximum spacing */
   --space-14: 3.5rem;   /* 56px */
   --space-16: 4rem;     /* 64px */
   --space-20: 5rem;     /* 80px */
   --space-24: 6rem;     /* 96px */
   --space-32: 8rem;     /* 128px */
   
-  /* 动画参数 */
+  /* Animation durations */
   --duration-fast: 150ms;
   --duration-normal: 200ms;
   --duration-slow: 300ms;
   --duration-slower: 500ms;
   
-  /* 缓动函数 */
+  /* Easing functions */
   --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-in: cubic-bezier(0.55, 0.085, 0.68, 0.53);
   --ease-in-out: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* 暗色模式 - 温暖深灰调 */
+/* iOS tint and glassmorphism utility classes */
+.bg-ios-primary { background-color: var(--primary-blue); }
+.bg-ios-secondary { background-color: var(--ios-secondary); }
+.bg-ios-success { background-color: var(--ios-success); }
+.bg-ios-warning { background-color: var(--ios-warning); }
+.bg-ios-danger { background-color: var(--ios-danger); }
+.text-ios-primary { color: var(--primary-blue); }
+.text-ios-label { color: var(--ios-label); }
+[data-theme="dark"] .text-ios-label { color: var(--ios-label-dark); }
+.bg-ios-surface { background-color: var(--ios-surface); }
+.bg-ios-surface-strong { background-color: var(--ios-surface-strong); }
+[data-theme="dark"] .bg-ios-surface,
+[data-theme="dark"] .bg-ios-surface-strong { background-color: var(--ios-surface-dark); }
+.border-ios-primary { border-color: var(--primary-blue); }
+.border-ios-border { border-color: var(--ios-border); }
+.border-ios-border-dark { border-color: var(--ios-border-dark); }
+.glass-ios {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.shadow-ios { box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12); }
+.shadow-ios-lg { box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18); }
+
+/* Dark mode - warm deep grays */
 [data-theme="dark"] {
   --neutral-50: #1F2937;
   --neutral-100: #374151;
@@ -135,7 +167,7 @@
   --gradient-warm: linear-gradient(135deg, #2D1B12 0%, #4A2E1F 100%);
   --gradient-calm: linear-gradient(135deg, #1A2332 0%, #2A3441 100%);
   
-  /* 暗色模式下的颜色调整 */
+  /* Color adjustments for dark mode */
   --primary-blue: #60A5FA;
   --primary-blue-light: #93C5FD;
   --primary-blue-dark: #3B82F6;
@@ -144,17 +176,17 @@
   --secondary-orange-dark: #F97316;
 }
 
-/* 精致卡片样式 - 增强视觉层次 */
+/* Refined card styling - enhanced depth */
 .card-elegant {
   transition: all var(--duration-normal) var(--ease-out);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 247, 250, 0.48) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.08),
-    0 1px 3px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 12px 28px rgba(12, 16, 39, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
 
 .card-elegant:hover {
@@ -165,23 +197,23 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-/* 精致渐变卡片 */
+/* Refined gradient card */
 .card-gradient-elegant {
   background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.95) 0%, 
-    rgba(255, 255, 255, 0.85) 50%, 
-    rgba(255, 255, 255, 0.75) 100%);
+    rgba(255, 255, 255, 0.82) 0%, 
+    rgba(241, 242, 247, 0.65) 50%, 
+    rgba(231, 233, 240, 0.55) 100%);
   border-radius: var(--radius-xl);
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    0 2px 8px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    0 18px 40px rgba(12, 16, 39, 0.14),
+    0 4px 10px rgba(12, 16, 39, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
-/* 精致按钮悬浮效果 */
+/* Refined button hover effect */
 .btn-gentle-hover {
   transition: all var(--duration-normal) var(--ease-out);
   position: relative;
@@ -203,7 +235,7 @@
   left: 100%;
 }
 
-/* 精致渐变叠加 */
+/* Refined gradient overlay */
 .gradient-elegant {
   background: linear-gradient(135deg, 
     rgba(255, 255, 255, 0.1) 0%, 
@@ -211,18 +243,18 @@
     transparent 100%);
 }
 
-/* 精致边框效果 */
+/* Refined border treatment */
 .border-elegant {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
-/* 精致文字阴影 */
+/* Refined text shadow */
 .text-shadow-elegant {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 精致动画效果 */
+/* Refined animation effects */
 @keyframes gentle-float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-4px); }
@@ -241,7 +273,7 @@
   animation: gentle-pulse 3s ease-in-out infinite;
 }
 
-/* 精致响应式间距 */
+/* Refined responsive spacing */
 @media (max-width: 640px) {
   .responsive-padding {
     padding: var(--space-4);
@@ -260,7 +292,7 @@
   }
 }
 
-/* 基础样式重置 */
+/* Base style reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -280,9 +312,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 精致按钮样式 */
+/* Refined button styling */
 .btn-primary {
-  background: var(--primary-blue);
+  background: rgba(10, 132, 255, 0.92);
   color: white;
   border: none;
   border-radius: var(--radius-lg);
@@ -297,8 +329,8 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--primary-blue-dark);
-  transform: translateY(-2px);
+  background: rgba(10, 132, 255, 1);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-medium);
 }
 
@@ -322,7 +354,7 @@ body {
   left: 100%;
 }
 
-/* 精致卡片样式 */
+/* Refined card styling */
 .card-elegant {
   background: white;
   border-radius: var(--radius-xl);
@@ -337,14 +369,14 @@ body {
   transform: translateY(-4px);
 }
 
-/* 暗色模式下的卡片 */
+/* Cards in dark mode */
 [data-theme="dark"] .card-elegant {
-  background: var(--neutral-800);
-  border-color: var(--neutral-700);
+  background: rgba(44, 44, 46, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
   color: var(--neutral-200);
 }
 
-/* 状态指示器 */
+/* Status indicator */
 .status-indicator {
   display: inline-flex;
   align-items: center;
@@ -372,36 +404,36 @@ body {
   border: 1px solid rgba(255, 112, 67, 0.2);
 }
 
-/* 精致输入框 */
+/* Refined input field */
 .input-elegant {
   width: 100%;
   padding: var(--space-4);
-  border: 2px solid var(--neutral-200);
+  border: 1px solid var(--neutral-200);
   border-radius: var(--radius-md);
   font-size: var(--font-size-lg);
-  background: white;
+  background: rgba(255, 255, 255, 0.92);
   transition: all var(--duration-normal) var(--ease-out);
 }
 
 .input-elegant:focus {
   outline: none;
   border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.16);
 }
 
-/* 暗色模式下的输入框 */
+/* Input fields in dark mode */
 [data-theme="dark"] .input-elegant {
-  background: var(--neutral-800);
-  border-color: var(--neutral-600);
+  background: rgba(44, 44, 46, 0.7);
+  border-color: rgba(255, 255, 255, 0.08);
   color: var(--neutral-200);
 }
 
 [data-theme="dark"] .input-elegant:focus {
   border-color: var(--primary-blue-light);
-  box-shadow: 0 0 0 3px rgba(107, 163, 232, 0.2);
+  box-shadow: 0 0 0 4px rgba(90, 200, 250, 0.18);
 }
 
-/* 微交互动画 - 增强和谐感 */
+/* Micro-interaction animations - cohesive feel */
 @keyframes gentle-bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
@@ -453,7 +485,7 @@ body {
   animation: warm-pulse 5s ease-in-out infinite;
 }
 
-/* 骨架屏样式 */
+/* Skeleton loading style */
 .skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
@@ -461,7 +493,7 @@ body {
   border-radius: var(--radius-md);
 }
 
-/* 精致开关 */
+/* Refined switch */
 .switch-elegant {
   position: relative;
   width: 60px;
@@ -493,7 +525,7 @@ body {
   left: 32px;
 }
 
-/* 精致进度条 */
+/* Refined progress bar */
 .progress-elegant {
   height: 8px;
   background: var(--neutral-200);
@@ -508,7 +540,7 @@ body {
   transition: width var(--duration-slow) var(--ease-out);
 }
 
-/* 响应式断点 */
+/* Responsive breakpoints */
 @media (max-width: 768px) {
   :root {
     --font-size-base: 1.125rem; /* 18px */
@@ -519,7 +551,7 @@ body {
   }
 }
 
-/* 无障碍增强 */
+/* Accessibility enhancements */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -528,7 +560,7 @@ body {
   }
 }
 
-/* 高对比度模式支持 */
+/* High-contrast mode support */
 @media (prefers-contrast: high) {
   :root {
     --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -536,7 +568,7 @@ body {
   }
 }
 
-/* 动画延迟工具类 */
+/* Animation delay utility classes */
 .animation-delay-100 { animation-delay: 100ms; }
 .animation-delay-200 { animation-delay: 200ms; }
 .animation-delay-300 { animation-delay: 300ms; }
@@ -548,7 +580,7 @@ body {
 .animation-delay-900 { animation-delay: 900ms; }
 .animation-delay-1000 { animation-delay: 1000ms; }
 
-/* 精致悬浮卡片 - 增强层次感 */
+/* Refined hover card - added depth */
 .card-hover-lift {
   transition: all var(--duration-slow) var(--ease-out);
   transform: translateY(0);
@@ -562,7 +594,7 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* 精致按钮组 - 和谐间距 */
+/* Refined button group - harmonious spacing */
 .button-group-harmonious {
   display: flex;
   gap: var(--space-6);
@@ -582,7 +614,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* 精致文字排版 - 增强可读性 */
+/* Refined typography - improved legibility */
 .text-harmonious {
   font-family: var(--font-family-base);
   line-height: var(--line-height-relaxed);
@@ -597,7 +629,7 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* 精致渐变遮罩 - 增强深度感 */
+/* Refined gradient mask - added depth */
 .gradient-mask-soft {
   position: relative;
   overflow: hidden;
@@ -614,7 +646,7 @@ body {
   pointer-events: none;
 }
 
-/* 精致边框效果 - 增强轮廓感 */
+/* Refined border effect - clearer outline */
 .border-harmonious {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 
@@ -622,7 +654,7 @@ body {
     0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* 精致背景效果 - 增强氛围感 */
+/* Refined background effect - richer atmosphere */
 .bg-harmonious-soft {
   background: 
     radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
@@ -630,7 +662,7 @@ body {
     radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
 }
 
-/* 打印样式 */
+/* Print styles */
 @media print {
   .no-print {
     display: none !important;

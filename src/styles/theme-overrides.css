@@ -1,0 +1,105 @@
+/**
+ * Theme overrides: automatically adapt common Tailwind color utilities in dark mode.
+ * Avoids adding dark: modifiers on every component and keeps styling consistent.
+ */
+[data-theme="dark"] .bg-white {
+  background-color: rgba(17, 24, 39, 0.9) !important;
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] .bg-white\/80 {
+  background-color: rgba(17, 24, 39, 0.75) !important;
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] .bg-gray-50 {
+  background-color: rgba(30, 41, 59, 0.75) !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .bg-gray-100,
+[data-theme="dark"] .bg-blue-50,
+[data-theme="dark"] .bg-indigo-50,
+[data-theme="dark"] .bg-purple-50,
+[data-theme="dark"] .bg-emerald-50,
+[data-theme="dark"] .bg-amber-50,
+[data-theme="dark"] .bg-orange-50,
+[data-theme="dark"] .bg-red-50,
+[data-theme="dark"] .bg-rose-50 {
+  background-color: rgba(30, 41, 59, 0.6) !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .border-gray-200 {
+  border-color: rgba(100, 116, 139, 0.5) !important;
+}
+
+[data-theme="dark"] .border-blue-200,
+[data-theme="dark"] .border-indigo-200,
+[data-theme="dark"] .border-emerald-200,
+[data-theme="dark"] .border-amber-200,
+[data-theme="dark"] .border-orange-200,
+[data-theme="dark"] .border-rose-200,
+[data-theme="dark"] .border-red-200 {
+  border-color: rgba(79, 70, 229, 0.45) !important;
+}
+
+[data-theme="dark"] .text-gray-800,
+[data-theme="dark"] .text-gray-700,
+[data-theme="dark"] .text-indigo-800,
+[data-theme="dark"] .text-blue-800,
+[data-theme="dark"] .text-emerald-800,
+[data-theme="dark"] .text-amber-800,
+[data-theme="dark"] .text-orange-800,
+[data-theme="dark"] .text-red-800,
+[data-theme="dark"] .text-rose-800 {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .text-gray-600 {
+  color: #cbd5f5 !important;
+}
+
+[data-theme="dark"] .bg-gray-200,
+[data-theme="dark"] .bg-orange-100,
+[data-theme="dark"] .bg-blue-100,
+[data-theme="dark"] .bg-purple-100,
+[data-theme="dark"] .bg-red-100,
+[data-theme="dark"] .bg-emerald-100,
+[data-theme="dark"] .bg-amber-100 {
+  background-color: rgba(51, 65, 85, 0.7) !important;
+}
+
+[data-theme="dark"] .text-blue-600 {
+  color: #93c5fd !important;
+}
+
+[data-theme="dark"] .text-emerald-700,
+[data-theme="dark"] .text-emerald-800 {
+  color: #a7f3d0 !important;
+}
+
+[data-theme="dark"] .text-amber-700,
+[data-theme="dark"] .text-amber-800,
+[data-theme="dark"] .text-orange-600,
+[data-theme="dark"] .text-orange-800 {
+  color: #fcd34d !important;
+}
+
+[data-theme="dark"] .text-red-600,
+[data-theme="dark"] .text-red-800,
+[data-theme="dark"] .text-rose-700,
+[data-theme="dark"] .text-rose-800 {
+  color: #fca5a5 !important;
+}
+
+[data-theme="dark"] .text-blue-600,
+[data-theme="dark"] .text-indigo-600,
+[data-theme="dark"] .text-indigo-800 {
+  color: #bfdbfe !important;
+}
+
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(90deg, #334155 25%, #1e293b 50%, #334155 75%) !important;
+}
+

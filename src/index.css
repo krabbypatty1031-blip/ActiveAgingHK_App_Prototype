@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 屏幕阅读器专用内容 */
+/* Screen reader only content */
 .sr-only {
   position: absolute;
   width: 1px;

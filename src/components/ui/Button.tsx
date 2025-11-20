@@ -2,17 +2,19 @@ import React from 'react';
 import { cn } from '../../utils/cn';
 import { Icon as UIIcon } from './Icon';
 
-// 按钮变体样式映射
+/**
+ * Apple HIG inspired tint styles: use iOS system colors with translucent layering for a native feel.
+ */
 const buttonVariantStyles = {
-  primary: 'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 focus:ring-blue-200 dark:focus:ring-blue-800 shadow-lg hover:shadow-xl',
-  secondary: 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 focus:ring-orange-200 dark:focus:ring-orange-800 shadow-lg hover:shadow-xl',
-  success: 'bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 focus:ring-green-200 dark:focus:ring-green-800 shadow-lg hover:shadow-xl',
-  warning: 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-white hover:from-yellow-600 hover:to-yellow-700 focus:ring-yellow-200 dark:focus:ring-yellow-800 shadow-lg hover:shadow-xl',
-  danger: 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 focus:ring-red-200 dark:focus:ring-red-800 shadow-lg hover:shadow-xl',
-  ghost: 'bg-transparent border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 focus:ring-gray-200 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800',
-  outline: 'bg-white border-2 border-blue-500 text-blue-600 hover:bg-blue-50 hover:border-blue-600 focus:ring-blue-200 dark:bg-gray-800 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20',
-  soft: 'bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 hover:from-blue-200 hover:to-indigo-200 focus:ring-blue-100 dark:from-blue-900 dark:to-indigo-900 dark:text-blue-300 dark:hover:from-blue-800 dark:hover:to-indigo-800',
-  sos: 'bg-gradient-to-r from-red-500 via-red-600 to-red-500 text-white animate-pulse hover:from-red-600 hover:via-red-700 hover:to-red-600 focus:ring-red-300 dark:focus:ring-red-700 shadow-2xl hover:shadow-red-500/25',
+  primary: 'bg-ios-primary text-white shadow-ios hover:shadow-ios-lg focus:ring-ios-primary/30 transition-shadow',
+  secondary: 'bg-ios-secondary text-white shadow-ios hover:shadow-ios-lg focus:ring-ios-secondary/30 transition-shadow',
+  success: 'bg-ios-success text-white shadow-ios hover:shadow-ios-lg focus:ring-ios-success/30 transition-shadow',
+  warning: 'bg-ios-warning text-white shadow-ios hover:shadow-ios-lg focus:ring-ios-warning/30 transition-shadow',
+  danger: 'bg-ios-danger text-white shadow-ios hover:shadow-ios-lg focus:ring-ios-danger/30 transition-shadow',
+  ghost: 'bg-transparent border border-ios-border text-ios-label hover:bg-ios-surface focus:ring-ios-primary/20 dark:border-ios-border-dark',
+  outline: 'bg-ios-surface border border-ios-primary text-ios-primary hover:bg-ios-surface-strong focus:ring-ios-primary/25 dark:bg-ios-surface-dark',
+  soft: 'bg-ios-surface glass-ios text-ios-primary hover:bg-ios-surface-strong focus:ring-ios-primary/15',
+  sos: 'bg-ios-danger text-white animate-pulse shadow-ios hover:shadow-ios-lg focus:ring-ios-danger/40',
 };
 
 const buttonSizeStyles = {
@@ -24,7 +26,7 @@ const buttonSizeStyles = {
   icon: 'p-4 text-lg rounded-full gap-0',
 };
 
-/** buttonRoundedStyles - 扩展圆角枚举以兼容更大尺寸需求 */
+/** buttonRoundedStyles - Extended radius options for larger control sizes */
 const buttonRoundedStyles = {
   none: 'rounded-none',
   sm: 'rounded-xl',
@@ -44,7 +46,7 @@ const buttonAnimationStyles = {
   gentle: 'animate-gentle-bounce',
 };
 
-/** buttonShadowStyles - 扩展阴影级别映射以覆盖额外的 Tailwind 阴影尺寸 */
+/** buttonShadowStyles - Extended shadow mapping to cover additional Tailwind sizes */
 const buttonShadowStyles = {
   none: 'shadow-none',
   sm: 'shadow-md',
@@ -54,7 +56,7 @@ const buttonShadowStyles = {
   '2xl': 'shadow-2xl',
 } as const;
 
-// 图标按钮组件
+// Icon button component
 interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: React.ComponentType<{ className?: string }> | string;
   iconClassName?: string;
@@ -83,8 +85,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         ref={ref}
         {...props}
       >
-        {/* 光泽效果 */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        
         
         {typeof Icon === 'string' ? (
           <UIIcon name={Icon as any} className={`relative z-10 ${iconClassName || ''}`} />
@@ -111,7 +112,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 );
 IconButton.displayName = 'IconButton';
 
-// 标准按钮组件
+// Standard button component
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   leftIcon?: React.ComponentType<{ className?: string }>;
@@ -140,10 +141,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || isLoading}
         {...props}
       >
-        {/* 光泽效果 */}
+        {/* Gloss highlight */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
-        {/* 加载动画 */}
+        {/* Loading animation */}
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-inherit rounded-inherit">
             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -161,7 +162,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 Button.displayName = 'Button';
 
-// 按钮组组件
+// Button group component
 interface ButtonGroupProps {
   children: React.ReactNode;
   className?: string;
@@ -202,7 +203,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
   );
 };
 
-// 浮动操作按钮
+// Floating action button
 interface FloatingActionButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: React.ComponentType<{ className?: string }>;
   position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';

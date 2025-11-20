@@ -1,135 +1,135 @@
-# 🏥 香港老年人智能社区照护App
+# 🏥 Hong Kong Senior Smart Community Care App
 
-专为香港长者设计的移动端优先智能社区照护应用，支持"原居安老"理念。
+A mobile-first intelligent community care application designed specifically for Hong Kong seniors, supporting the "Aging in Place" concept.
 
-## 🎯 项目特色
+## 🎯 Project Features
 
-### 核心功能
-- **健康监测**：交通灯颜色编码显示生命体征（心率、血压、步数、睡眠）
-- **紧急求助**：SOS一键求助 + 跌倒检测 + 30秒倒计时取消
-- **AI语音助手**：粤语语音识别和合成，支持日常查询和紧急关键词检测
-- **家庭联络**：语音描述相册、一键视频通话、社区活动报名
-- **家属监控**：Web版仪表盘，实时查看长者健康状态
+### Core Functions
+- **Health Monitoring**: Traffic light color-coded display of vital signs (heart rate, blood pressure, steps, sleep)
+- **Emergency Help**: SOS one-touch help + fall detection + 30-second countdown cancellation
+- **AI Voice Assistant**: English voice recognition and synthesis, supporting daily queries and emergency keyword detection
+- **Family Connection**: Voice-described photo albums, one-touch video calls, community activity registration
+- **Family Monitoring**: Web-based dashboard for real-time viewing of senior health status
 
-### 无障碍设计
-- **字体大小**：支持16px-28px四种尺寸
-- **高对比度**：黑白高对比模式
-- **语音导航**：全程粤语语音播报
-- **触摸优化**：按钮≥48x48dp，防误触设计
-- **简化操作**：最多两层菜单结构
+### Accessibility Design
+- **Font Size**: Supports four sizes from 16px-28px
+- **High Contrast**: Black and white high contrast mode
+- **Voice Navigation**: Full English voice announcements
+- **Touch Optimization**: Buttons ≥48x48dp, anti-mis-touch design
+- **Simplified Operations**: Maximum two-level menu structure
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 安装依赖
+### Install Dependencies
 ```bash
 npm install
 ```
 
-### 启动开发服务器
+### Start Development Server
 ```bash
 npm run dev
 ```
 
-### 访问应用
-- 长者端：http://localhost:5173
-- 家属端：http://localhost:5173/family
+### Access Application
+- Senior End: http://localhost:5173
+- Family End: http://localhost:5173/family
 
-## 📱 页面结构
+## 📱 Page Structure
 
 ```
 src/
-├── pages/              # 主要页面组件
-│   ├── Home.tsx        # 主页面（问候语 + 导航）
-│   ├── HealthDashboard.tsx  # 健康仪表盘
-│   ├── AIAssistant.tsx # AI语音助手
-│   ├── EmergencySystem.tsx   # 紧急求助系统
-│   ├── SocialFamily.tsx # 社交家人界面
-│   └── FamilyDashboard.tsx  # 家属监控面板
-├── components/         # 可复用组件
-│   └── AccessibilitySettings.tsx  # 无障碍设置
-├── styles/             # 样式文件
-│   └── accessibility.css       # 无障碍样式
-└── App.tsx            # 主应用组件
+├── pages/              # Main page components
+│   ├── Home.tsx        # Home page (greeting + navigation)
+│   ├── HealthDashboard.tsx  # Health dashboard
+│   ├── AIAssistant.tsx # AI voice assistant
+│   ├── EmergencySystem.tsx   # Emergency help system
+│   ├── SocialFamily.tsx # Social family interface
+│   └── FamilyDashboard.tsx  # Family monitoring panel
+├── components/         # Reusable components
+│   └── AccessibilitySettings.tsx  # Accessibility settings
+├── styles/             # Style files
+│   └── accessibility.css       # Accessibility styles
+└── App.tsx            # Main application component
 ```
 
-## 🎨 设计规范
+## 🎨 Design Specifications
 
-### 颜色系统
-- 背景：#FFFFFF / #F5F7FA（浅色系）
-- 文字：#333333（深色系）
-- SOS按钮：#FF4D4F（高饱和红色）
-- 状态指示：绿色=正常，黄色=注意，红色=异常
+### Color System
+- Background: #FFFFFF / #F5F7FA (light colors)
+- Text: #333333 (dark colors)
+- SOS Button: #FF4D4F (high saturation red)
+- Status Indicators: Green=Normal, Yellow=Attention, Red=Abnormal
 
-### 字体规范
-- 最小字号：18pt（符合无障碍标准）
-- 标题：24pt-32pt
-- 按钮文字：20pt-24pt
-- 支持四种字体大小调节
+### Font Specifications
+- Minimum Font Size: 18pt (meets accessibility standards)
+- Headings: 24pt-32pt
+- Button Text: 20pt-24pt
+- Supports four font size adjustments
 
-### 交互规范
-- 按钮尺寸：≥48x48dp
-- 触摸间距：≥8dp
-- 语音反馈：所有操作都有语音确认
-- 震动反馈：关键操作提供触觉反馈
+### Interaction Specifications
+- Button Size: ≥48x48dp
+- Touch Spacing: ≥8dp
+- Voice Feedback: All operations have voice confirmation
+- Vibration Feedback: Key operations provide tactile feedback
 
-## 🔧 技术特性
+## 🔧 Technical Features
 
-### 前端技术
-- **框架**：React 18 + TypeScript
-- **构建工具**：Vite
-- **样式**：Tailwind CSS
-- **图标**：Lucide React
-- **路由**：React Router DOM
+### Frontend Technology
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
 
-### 无障碍技术
-- **语音合成**：Web Speech API（粤语）
-- **语音识别**：Web Speech API（粤语）
-- **震动反馈**：Vibration API
-- **字体调节**：CSS自定义属性
-- **高对比度**：CSS滤镜和类切换
+### Accessibility Technology
+- **Speech Synthesis**: Web Speech API (English)
+- **Speech Recognition**: Web Speech API (English)
+- **Vibration Feedback**: Vibration API
+- **Font Adjustment**: CSS custom properties
+- **High Contrast**: CSS filters and class switching
 
-### 移动端优化
-- **响应式设计**：移动端优先
-- **PWA支持**：可安装为原生应用
-- **触摸手势**：优化的触摸体验
-- **离线支持**：基础功能离线可用
+### Mobile Optimization
+- **Responsive Design**: Mobile-first
+- **PWA Support**: Can be installed as a native app
+- **Touch Gestures**: Optimized touch experience
+- **Offline Support**: Basic functions available offline
 
-## 📋 使用说明
+## 📋 Usage Instructions
 
-### 对于长者
-1. 打开应用即可看到亲切的粤语问候
-2. 点击大按钮访问各项功能
-3. 使用语音助手时点击麦克风图标
-4. 紧急情况下点击红色SOS按钮
-5. 通过设置调节字体大小和对比度
+### For Seniors
+1. Open the app to see a friendly English greeting
+2. Click large buttons to access various functions
+3. Click the microphone icon when using the voice assistant
+4. Click the red SOS button in emergency situations
+5. Adjust font size and contrast through settings
 
-### 对于家属
-1. 访问 `/family` 查看监控面板
-2. 选择要查看的长者用户
-3. 查看实时健康数据和趋势
-4. 接收紧急警报和提醒
-5. 通过快速操作联系长者
+### For Family Members
+1. Visit `/family` to view the monitoring panel
+2. Select the senior user to view
+3. View real-time health data and trends
+4. Receive emergency alerts and reminders
+5. Contact seniors through quick actions
 
-## 🛡️ 安全特性
+## 🛡️ Security Features
 
-- **紧急求助**：多重确认机制防止误触
-- **跌倒检测**：30秒倒计时允许取消
-- **位置共享**：仅在紧急情况下发送位置
-- **数据保护**：本地存储敏感信息
-- **语音隐私**：语音识别本地处理
+- **Emergency Help**: Multiple confirmation mechanisms to prevent accidental activation
+- **Fall Detection**: 30-second countdown allows cancellation
+- **Location Sharing**: Location sent only in emergency situations
+- **Data Protection**: Sensitive information stored locally
+- **Voice Privacy**: Voice recognition processed locally
 
-## 🌟 项目亮点
+## 🌟 Project Highlights
 
-1. **本土化设计**：完全适配香港长者使用习惯
-2. **家庭关怀**：连接长者与家人的情感纽带
-3. **智能预警**：AI检测异常行为和健康状况
-4. **简单易用**：极简设计，减少学习成本
-5. **全天候守护**：24小时健康监测和紧急响应
+1. **Localized Design**: Fully adapted to Hong Kong senior usage habits
+2. **Family Care**: Connects seniors with family emotional bonds
+3. **Smart Alerts**: AI detects abnormal behavior and health conditions
+4. **Simple and Easy to Use**: Minimalist design, reducing learning curve
+5. **24/7 Guardian**: 24-hour health monitoring and emergency response
 
-## 📞 支持
+## 📞 Support
 
-如有问题或建议，请联系开发团队。
+For questions or suggestions, please contact the development team.
 
 ---
 
-**让科技温暖长者的心，让关爱跨越时空的距离。** 💕
+**Let technology warm the hearts of seniors, let care transcend time and space.** 💕

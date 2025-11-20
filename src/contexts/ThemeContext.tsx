@@ -25,19 +25,18 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
-    // 检查本地存储的主题设置
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
     const shouldUseDarkMode = savedTheme === 'dark' || (!savedTheme && prefersDark);
-    
+
     setIsDarkMode(shouldUseDarkMode);
     setTheme(shouldUseDarkMode ? 'dark' : 'light');
-    
-    // 应用主题到根元素
+
+    // Apply to the root element so Tailwind dark mode works seamlessly
     document.documentElement.setAttribute('data-theme', shouldUseDarkMode ? 'dark' : 'light');
-    
-    // 更新body背景色
+    document.documentElement.classList.toggle('dark', shouldUseDarkMode);
+
+    // Sync base styling on the body element
     if (shouldUseDarkMode) {
       document.body.style.background = 'linear-gradient(135deg, #1F2937 0%, #374151 100%)';
       document.body.style.color = '#F9FAFB';
@@ -49,17 +48,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   const toggleDarkMode = () => {
     const newTheme = !isDarkMode ? 'dark' : 'light';
-    
     setIsDarkMode(!isDarkMode);
     setTheme(newTheme);
-    
-    // 保存到本地存储
+
     localStorage.setItem('theme', newTheme);
-    
-    // 应用主题到根元素
     document.documentElement.setAttribute('data-theme', newTheme);
-    
-    // 更新body背景色
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+
     if (newTheme === 'dark') {
       document.body.style.background = 'linear-gradient(135deg, #1F2937 0%, #374151 100%)';
       document.body.style.color = '#F9FAFB';

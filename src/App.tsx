@@ -1,18 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { AccessibilityProvider } from './components/AccessibilitySettings';
-import AccessibilitySettings from './components/AccessibilitySettings';
+import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './contexts/ThemeContext';
 
-// 原始页面组件
-import Home from './pages/Home';
-import HealthDashboard from './pages/HealthDashboard';
-import AIAssistant from './pages/AIAssistant';
-import EmergencySystem from './pages/EmergencySystem';
-import SocialFamily from './pages/SocialFamily';
+// Original page components removed
+
 import FamilyDashboard from './pages/FamilyDashboard';
 
-// 精致UI页面组件
+// Refined UI page components
 import ElegantHome from './pages/ElegantHome';
 import ElegantHealthDashboard from './pages/ElegantHealthDashboard';
 import ElegantAIAssistant from './pages/ElegantAIAssistant';
@@ -20,38 +16,40 @@ import ElegantEmergencySystem from './pages/ElegantEmergencySystem';
 import ElegantSocialFamily from './pages/ElegantSocialFamily';
 import ElegantSettings from './pages/ElegantSettings';
 import ElegantLogin from './pages/ElegantLogin';
+import AddReminder from './pages/AddReminder';
+import FallAlert from './pages/FallAlert';
+import Doctor from './pages/Doctor';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider>
       <AccessibilityProvider>
         <Router basename={import.meta.env.BASE_URL}>
+          <ScrollToTop />
           <div className="min-h-screen bg-gray-50">
             <Routes>
-              {/* 登录页 - 默认首页 */}
+              {/* Login page - default landing */}
               <Route path="/" element={<ElegantLogin />} />
               
-              {/* 精致UI路由 - 主要使用这些 */}
+              {/* Refined UI routes - primary flow */}
               <Route path="/home" element={<ElegantHome />} />
               <Route path="/health" element={<ElegantHealthDashboard />} />
               <Route path="/assistant" element={<ElegantAIAssistant />} />
               <Route path="/emergency" element={<ElegantEmergencySystem />} />
               <Route path="/social" element={<ElegantSocialFamily />} />
               <Route path="/settings" element={<ElegantSettings onBack={() => window.history.back()} />} />
+              <Route path="/add" element={<AddReminder />} />
+              <Route path="/fall" element={<FallAlert />} />
+              <Route path="/doctor" element={<Doctor />} />
               
-              {/* 原始页面路由 - 作为备选 */}
-              <Route path="/classic" element={<Home />} />
-              <Route path="/classic/health" element={<HealthDashboard />} />
-              <Route path="/classic/assistant" element={<AIAssistant />} />
-              <Route path="/classic/emergency" element={<EmergencySystem />} />
-              <Route path="/classic/social" element={<SocialFamily />} />
+              {/* Legacy page routes - removed */}
+
               
-              {/* Web版家属仪表盘 */}
+              {/* Web-based family dashboard */}
               <Route path="/family" element={<FamilyDashboard />} />
             </Routes>
             
-            {/* 无障碍设置组件（全局可用） */}
-            <AccessibilitySettings />
+            {/* Global Accessibility Settings Button - Removed as per request */}
           </div>
         </Router>
       </AccessibilityProvider>

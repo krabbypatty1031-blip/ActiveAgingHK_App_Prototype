@@ -34,7 +34,7 @@ export const BrandMascot: React.FC<BrandMascotProps> = ({
     <div className={`${sizeClasses[size]} ${animationClasses} ${className}`}>
       <img 
         src={`${import.meta.env.BASE_URL}UI.png`}
-        alt="猫咪吉祥物" 
+        alt="Cat mascot" 
         className={`w-full h-full object-contain ${moodColors[mood]}`}
       />
     </div>
@@ -45,7 +45,7 @@ export const BrandMascot: React.FC<BrandMascotProps> = ({
     <div className={`relative ${sizeClasses[size]} ${className}`}>
       <img 
         src={`${import.meta.env.BASE_URL}UI.png`}
-        alt="品牌吉祥物" 
+        alt="Brand mascot" 
         className={`w-full h-full object-contain ${moodColors[mood]}`}
       />
     </div>
@@ -63,7 +63,7 @@ export const BrandMascot: React.FC<BrandMascotProps> = ({
   return (
     <div className="inline-block relative">
       {getMascotComponent()}
-      {/* 温馨的对话气泡 - 优化位置适应UI排版 */}
+      {/* Friendly speech bubble - positioned to fit the layout */}
       <div className={`
         absolute -top-8 -left-2 
         sm:-top-10 sm:left-1/2 sm:-translate-x-1/2
@@ -82,10 +82,10 @@ export const BrandMascot: React.FC<BrandMascotProps> = ({
         translate-y-2 pointer-events-none
         max-w-[120px] sm:max-w-none
       `}>
-        {mood === 'happy' && '很高興陪伴您！'}
-        {mood === 'sleepy' && '晚安，好好休息~'}
-        {mood === 'playful' && '一起玩吧！'}
-        {mood === 'caring' && '我們關心您 💕'}
+        {mood === 'happy' && 'Happy to stay by your side!'}
+        {mood === 'sleepy' && 'Good night—rest well~'}
+        {mood === 'playful' && 'Let’s have some fun!'}
+        {mood === 'caring' && 'We care about you 💕'}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as LucideIcons from 'lucide-react';
 
-// 图标大小配置
+// Icon size configuration
 export const ICON_SIZES = {
   xs: 12,
   sm: 16,
@@ -12,7 +12,7 @@ export const ICON_SIZES = {
   '3xl': 48,
 } as const;
 
-// 图标颜色配置
+// Icon color configuration
 export const ICON_COLORS = {
   primary: 'text-blue-600 dark:text-blue-400',
   secondary: 'text-orange-600 dark:text-orange-400',
@@ -26,7 +26,7 @@ export const ICON_COLORS = {
   inherit: 'text-current',
 } as const;
 
-// 图标动画配置
+// Icon animation configuration
 export const ICON_ANIMATIONS = {
   none: '',
   spin: 'animate-spin',
@@ -50,8 +50,8 @@ export interface IconProps {
 }
 
 /**
- * 统一图标组件
- * 提供一致的图标样式和行为
+ * Unified icon component
+ * Provides consistent icon styles and behaviors
  */
 export const Icon: React.FC<IconProps> = ({
   name,
@@ -61,7 +61,7 @@ export const Icon: React.FC<IconProps> = ({
   animation = 'none',
   strokeWidth = 2,
 }) => {
-  // 处理字符串名称映射到正确的Lucide图标组件名称
+  // Handle string name mapping to correct Lucide icon component names
   const iconNameMap: Record<string, keyof typeof LucideIcons> = {
     'ArrowLeft': 'ArrowLeft',
     'Settings': 'Settings',
@@ -115,8 +115,8 @@ export const Icon: React.FC<IconProps> = ({
 };
 
 /**
- * 图标按钮组件
- * 结合图标和按钮功能
+ * Icon button component
+ * Combines icon and button functionality
  */
 export interface IconButtonProps extends Omit<IconProps, 'name'> {
   icon: keyof typeof LucideIcons;
@@ -198,8 +198,8 @@ export const IconButton: React.FC<IconButtonProps> = ({
 };
 
 /**
- * 图标组组件
- * 用于显示多个相关图标
+ * Icon group component
+ * Used to display multiple related icons
  */
 export interface IconGroupProps {
   icons: Array<{
@@ -239,8 +239,8 @@ export const IconGroup: React.FC<IconGroupProps> = ({
 };
 
 /**
- * 状态图标组件
- * 用于显示不同状态的图标
+ * Status icon component
+ * Used to display icons for different states
  */
 export interface StatusIconProps {
   status: 'success' | 'warning' | 'error' | 'info' | 'loading';
@@ -275,8 +275,8 @@ export const StatusIcon: React.FC<StatusIconProps> = ({
 };
 
 /**
- * 导航图标组件
- * 专门用于导航的图标
+ * Navigation icon component
+ * Specifically designed for navigation icons
  */
 export interface NavigationIconProps {
   name: 'home' | 'health' | 'assistant' | 'emergency' | 'social' | 'settings' | 'family';
@@ -312,7 +312,7 @@ export const NavigationIcon: React.FC<NavigationIconProps> = ({
   );
 };
 
-// 导出所有 Lucide 图标供外部使用
+// Export all Lucide icons for external use
 export { LucideIcons };
 
 export default Icon;

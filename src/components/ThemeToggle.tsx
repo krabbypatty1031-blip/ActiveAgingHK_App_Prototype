@@ -41,9 +41,9 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         active:scale-95
         focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-gray-600
       `}
-      aria-label={isDarkMode ? '切换到日间模式' : '切换到夜间模式'}
+      aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {/* 背景动画效果 */}
+      {/* Background shimmer effect */}
       <div className={`
         absolute inset-0 rounded-full
         bg-gradient-to-r from-yellow-200 to-orange-200
@@ -52,7 +52,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         ${isDarkMode ? 'opacity-100' : 'opacity-0'}
       `} />
       
-      {/* 太阳图标 */}
+      {/* Sun icon */}
       <div className={`
         relative z-10 transition-all duration-300
         ${isDarkMode ? 'opacity-0 scale-50 translate-x-2' : 'opacity-100 scale-100 translate-x-0'}
@@ -63,7 +63,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         />
       </div>
       
-      {/* 月亮图标 */}
+      {/* Moon icon */}
       <div className={`
         absolute inset-0 flex items-center justify-center transition-all duration-300
         ${isDarkMode ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-50 -translate-x-2'}
@@ -74,23 +74,18 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
         />
       </div>
       
-      {/* 标签文字 */}
+      {/* Toggle label */}
       {showLabel && (
         <span className={`
           ml-2 font-medium transition-colors duration-300
           text-gray-700 dark:text-gray-200
         `}>
-          {isDarkMode ? '夜间模式' : '日间模式'}
+          {isDarkMode ? 'Dark mode' : 'Light mode'}
         </span>
       )}
       
-      {/* 脉冲动画效果 */}
-      <div className={`
-        absolute -inset-1 rounded-full border-2
-        ${isDarkMode ? 'border-blue-400' : 'border-yellow-400'}
-        opacity-0 animate-ping
-        transition-opacity duration-1000
-      `} />
+      {/* Pulse animation accent */}
+      
     </button>
   );
 };

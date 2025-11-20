@@ -1,4 +1,4 @@
-/* 高对比度模式样式 */
+/* High contrast mode styles */
 .high-contrast {
   filter: contrast(1.5) !important;
 }
@@ -39,7 +39,7 @@
   color: #fff !important;
 }
 
-/* 大字体模式 */
+/* Large font mode */
 .text-large {
   font-size: 1.25rem !important;
 }
@@ -48,13 +48,13 @@
   font-size: 1.5rem !important;
 }
 
-/* 按钮最小尺寸 */
+/* Button minimum size */
 button {
   min-width: 48px;
   min-height: 48px;
 }
 
-/* 语音播放时的视觉反馈 */
+/* Visual feedback during voice playback */
 .speaking {
   animation: pulse 1s infinite;
 }
@@ -68,7 +68,7 @@ button {
   }
 }
 
-/* 紧急状态动画 */
+/* Emergency state animation */
 .emergency-active {
   animation: emergency-flash 0.5s infinite;
 }
@@ -82,20 +82,20 @@ button {
   }
 }
 
-/* 无障碍焦点样式 */
+/* Accessibility focus styles */
 *:focus {
   outline: 2px solid #3b82f6 !important;
   outline-offset: 2px !important;
 }
 
-/* 触摸目标尺寸 */
+/* Touch target size */
 .touch-target {
   min-width: 44px;
   min-height: 44px;
   padding: 12px;
 }
 
-/* 语音控制反馈 */
+/* Voice control feedback */
 .listening {
   border-color: #ef4444 !important;
   box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3) !important;

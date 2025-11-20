@@ -38,21 +38,21 @@ const FamilyDashboard: React.FC = () => {
   const [elderlyUsers] = useState<ElderlyUser[]>([
     {
       id: '1',
-      name: '陳太 (母親)',
+      name: 'Mrs. Chan (Mother)',
       age: 78,
       avatar: '👵',
       status: 'online',
-      lastActive: '2分鐘前',
-      location: '九龍城區'
+      lastActive: '2 minutes ago',
+      location: 'Kowloon City District'
     },
     {
       id: '2',
-      name: '李伯 (父親)',
+      name: 'Mr. Lee (Father)',
       age: 82,
       avatar: '👴',
       status: 'warning',
-      lastActive: '1小時前',
-      location: '九龍城區'
+      lastActive: '1 hour ago',
+      location: 'Kowloon City District'
     }
   ]);
 
@@ -68,7 +68,7 @@ const FamilyDashboard: React.FC = () => {
     {
       id: '1',
       type: 'emergency',
-      message: '陳太觸發了SOS緊急求助',
+      message: 'Mrs. Chan triggered an SOS emergency request',
       timestamp: '10:30',
       userId: '1',
       resolved: false
@@ -76,7 +76,7 @@ const FamilyDashboard: React.FC = () => {
     {
       id: '2',
       type: 'health',
-      message: '李伯的步數未達標（僅2,100步）',
+      message: 'Mr. Lee did not reach his step goal (only 2,100 steps)',
       timestamp: '18:00',
       userId: '2',
       resolved: false
@@ -84,7 +84,7 @@ const FamilyDashboard: React.FC = () => {
     {
       id: '3',
       type: 'activity',
-      message: '陳太報名參加了明天的太極班',
+      message: 'Mrs. Chan registered for tomorrow’s Tai Chi session',
       timestamp: '09:15',
       userId: '1',
       resolved: true
@@ -120,16 +120,16 @@ const FamilyDashboard: React.FC = () => {
   };
 
   const callUser = (user: ElderlyUser) => {
-    alert(`正在撥打 ${user.name} 的電話...`);
+    alert(`Dialling ${user.name} now...`);
   };
 
   const sendMessage = (user: ElderlyUser) => {
-    alert(`正在打開與 ${user.name} 的訊息界面...`);
+    alert(`Opening the message thread with ${user.name}...`);
   };
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      {/* 头部 */}
+      {/* Header */}
       <div className="flex items-center mb-8">
         <IconButton
           icon="ArrowLeft"
@@ -137,22 +137,22 @@ const FamilyDashboard: React.FC = () => {
           variant="ghost"
           shape="rounded"
           size="md"
-          tooltip="返回主頁"
+          tooltip="Back to home"
           className="mr-4 bg-white/80 hover:bg-white border border-purple-200 text-purple-600 shadow-md hover:shadow-lg"
-          aria-label="返回主頁"
+          aria-label="Back to home"
         />
         <div>
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">家屬照護儀表板</h1>
-          <p className="text-xl text-gray-600">關心長者，守護健康</p>
+          <h1 className="text-4xl font-bold text-gray-800 mb-2">Family care dashboard</h1>
+          <p className="text-xl text-gray-600">Stay connected and support healthy ageing</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* 左侧：用户选择和概览 */}
+        {/* Left column: user selection and overview */}
         <div className="lg:col-span-1">
-          {/* 用户选择 */}
+          {/* User selection */}
           <div className="bg-white rounded-2xl p-6 mb-6 shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">選擇長者</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Choose elder</h2>
             <div className="space-y-3">
               {elderlyUsers.map((user) => (
                 <button
@@ -169,7 +169,7 @@ const FamilyDashboard: React.FC = () => {
                       <span className="text-3xl mr-3">{user.avatar}</span>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-800">{user.name}</h3>
-                        <p className="text-sm text-gray-600">{user.age}歲</p>
+                        <p className="text-sm text-gray-600">{user.age} yrs</p>
                       </div>
                     </div>
                     <div className="text-right">
@@ -185,37 +185,37 @@ const FamilyDashboard: React.FC = () => {
             </div>
           </div>
 
-          {/* 快速操作 */}
+          {/* Quick actions */}
           <div className="bg-white rounded-2xl p-6 mb-6 shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">快速操作</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Quick actions</h2>
             <div className="space-y-3">
               <button
                 onClick={() => callUser(currentUser!)}
                 className="w-full bg-green-500 hover:bg-green-600 text-white rounded-xl p-3 flex items-center justify-center transform transition-all duration-200 hover:scale-105"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                <span>撥打電話</span>
+                <span>Call</span>
               </button>
               <button
                 onClick={() => sendMessage(currentUser!)}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-xl p-3 flex items-center justify-center transform transition-all duration-200 hover:scale-105"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
-                <span>發送訊息</span>
+                <span>Send message</span>
               </button>
               <button
-                onClick={() => alert('查看位置功能')}
+                onClick={() => alert('Location view feature coming soon')}
                 className="w-full bg-purple-500 hover:bg-purple-600 text-white rounded-xl p-3 flex items-center justify-center transform transition-all duration-200 hover:scale-105"
               >
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>查看位置</span>
+                <span>View location</span>
               </button>
             </div>
           </div>
 
-          {/* 最近提醒 */}
+          {/* Recent alerts */}
           <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">最近提醒</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Recent alerts</h2>
             <div className="space-y-3">
               {alerts.filter(alert => !alert.resolved).slice(0, 3).map((alert) => (
                 <div key={alert.id} className="p-3 bg-red-50 rounded-xl border border-red-200">
@@ -231,7 +231,7 @@ const FamilyDashboard: React.FC = () => {
                       onClick={() => resolveAlert(alert.id)}
                       className="text-green-600 hover:text-green-700 text-sm"
                     >
-                      標記已讀
+                      Mark as read
                     </button>
                   </div>
                 </div>
@@ -240,12 +240,12 @@ const FamilyDashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* 右侧：详细数据 */}
+        {/* Right column: detailed data */}
         <div className="lg:col-span-2">
-          {/* 时间范围选择 */}
+          {/* Time range selector */}
           <div className="bg-white rounded-2xl p-4 mb-6 shadow-lg">
             <div className="flex space-x-4">
-              {[{value: 'today', label: '今日'}, {value: 'week', label: '本週'}, {value: 'month', label: '本月'}].map((range) => (
+              {[{value: 'today', label: 'Today'}, {value: 'week', label: 'This week'}, {value: 'month', label: 'This month'}].map((range) => (
                 <button
                   key={range.value}
                   onClick={() => setTimeRange(range.value as any)}
@@ -261,13 +261,13 @@ const FamilyDashboard: React.FC = () => {
             </div>
           </div>
 
-          {/* 健康数据概览 */}
+          {/* Health overview */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             {[
-              { title: '心率', value: `${healthData.heartRate.value} bpm`, icon: Heart, color: getStatusColor(healthData.heartRate.status) },
-              { title: '血壓', value: `${healthData.bloodPressure.systolic}/${healthData.bloodPressure.diastolic}`, icon: Activity, color: getStatusColor(healthData.bloodPressure.status) },
-              { title: '步數', value: `${healthData.steps.value}`, icon: Footprints, color: getStatusColor(healthData.steps.status) },
-              { title: '睡眠', value: `${healthData.sleep.value}h`, icon: Moon, color: getStatusColor(healthData.sleep.status) }
+              { title: 'Heart rate', value: `${healthData.heartRate.value} bpm`, icon: Heart, color: getStatusColor(healthData.heartRate.status) },
+              { title: 'Blood pressure', value: `${healthData.bloodPressure.systolic}/${healthData.bloodPressure.diastolic}`, icon: Activity, color: getStatusColor(healthData.bloodPressure.status) },
+              { title: 'Steps', value: `${healthData.steps.value}`, icon: Footprints, color: getStatusColor(healthData.steps.status) },
+              { title: 'Sleep', value: `${healthData.sleep.value}h`, icon: Moon, color: getStatusColor(healthData.sleep.status) }
             ].map((item, index) => (
               <div key={index} className={`${item.color} rounded-2xl p-4`}>
                 <div className="flex items-center justify-between mb-2">
@@ -280,30 +280,30 @@ const FamilyDashboard: React.FC = () => {
             ))}
           </div>
 
-          {/* 用药提醒 */}
+          {/* Medication reminder */}
           <div className="bg-white rounded-2xl p-6 mb-6 shadow-lg">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-2xl font-bold text-gray-800">用藥情況</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Medication status</h2>
               <div className={`px-4 py-2 rounded-xl ${
                 healthData.medication.taken ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
               }`}>
-                {healthData.medication.taken ? '已服用' : '未服用'}
+                {healthData.medication.taken ? 'Taken' : 'Missed'}
               </div>
             </div>
             <div className="flex items-center">
               <Clock className="w-5 h-5 text-gray-600 mr-2" />
               <p className="text-lg text-gray-700">
-                下次用藥時間：{healthData.medication.nextDose}
+                Next dose: {healthData.medication.nextDose}
               </p>
             </div>
           </div>
 
-          {/* 活动趋势 */}
+          {/* Activity trends */}
           <div className="bg-white rounded-2xl p-6 shadow-lg">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-800">活動趨勢</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Activity trends</h2>
               <div className="flex space-x-2">
-                {['步數', '睡眠', '心率'].map((metric) => (
+                {['Steps', 'Sleep', 'Heart rate'].map((metric) => (
                   <button
                     key={metric}
                     className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-sm transition-all duration-200"
@@ -316,8 +316,10 @@ const FamilyDashboard: React.FC = () => {
             <div className="h-64 bg-gray-50 rounded-xl flex items-center justify-center">
               <div className="text-center">
                 <TrendingUp className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                <p className="text-lg text-gray-500">活動趨勢圖表</p>
-                <p className="text-sm text-gray-400 mt-1">顯示{timeRange === 'today' ? '今日' : timeRange === 'week' ? '本週' : '本月'}數據</p>
+                <p className="text-lg text-gray-500">Activity trend chart</p>
+                <p className="text-sm text-gray-400 mt-1">
+                  Showing {timeRange === 'today' ? 'today’s' : timeRange === 'week' ? 'this week’s' : 'this month’s'} data
+                </p>
               </div>
             </div>
           </div>
