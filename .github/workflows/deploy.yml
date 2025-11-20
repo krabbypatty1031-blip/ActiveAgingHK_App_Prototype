@@ -36,7 +36,7 @@ jobs:
           OPENROUTER_API_URL: ${{ secrets.OPENROUTER_API_URL }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          cat <<'EOF' > .env.production
+          cat <<EOF > .env.production
           VITE_DEEPSEEK_API_URL=${DEEPSEEK_API_URL}
           VITE_DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
           VITE_OPENROUTER_API_URL=${OPENROUTER_API_URL}
